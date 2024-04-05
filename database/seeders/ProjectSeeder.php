@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,18 +14,14 @@ class ProjectSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Project $project)
+    public function run()
     {
-        $project = new Project;
-        $project->title = 'vite-boolflix';
-        $project->description = 'progetto eseguito con Vue + Vite che simula la webapp di Netflix.';
-        $project->date_of_publication = '2024-02-16';
-        $project->save();
+        $types = Type::all()->pluck('id');
+        $types[] = null;
 
+        $type_id
         $project = new Project;
-        $project->title = 'php-badwords';
-        $project->description = 'primo progetto in cui si è usato il php.';
-        $project->date_of_publication = '2024-02-23';
-        $project->save();
+        $project->type_id = $type_id;
+
     }
 }
