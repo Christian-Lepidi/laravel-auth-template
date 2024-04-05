@@ -27,6 +27,7 @@ class ProjectSeeder extends Seeder
             $project->title = $faker->catchphrase();
             $project->description = $faker->sentence();
             $project->date_of_publication = $faker->date();
+            $project->save();
         }
     }
 }
