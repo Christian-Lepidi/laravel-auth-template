@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -15,8 +16,15 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        $type = new Type;
-        $type->type = $type;
-        $type->save();
+        $labels = ["Frontend", "Backend", "Fullstack"];
+        foreach ($labels as $label) {
+            $type = new Type();
+            $type->label = $label;
+
+            $type->save();
+        }
+
+
+
     }
 }

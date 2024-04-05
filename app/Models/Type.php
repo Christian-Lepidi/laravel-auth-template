@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
-    public function posts()
+    public function projects()
     {
-        return $this->hasMany(Type::class);
+        return $this->hasMany(Project::class);
     }
 }
